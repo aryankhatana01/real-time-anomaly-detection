@@ -1,4 +1,4 @@
-# real-time-anomaly-detection
+# Real Time Anomaly Detection using Kafka
 This is an attempt to learn Kafka by building a real-time anomaly detection system using the IsolationForest algorithm.
 
 ## Sample Usage

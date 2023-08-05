@@ -16,6 +16,7 @@ kafka-console-producer --topic topic1 --bootstrap-server localhost:29092
 kafka-console-consumer --topic topic1 --from-beginning --bootstrap-server localhost:29092
 ```
 
+-----------------------------------------------------------------------------
 
 [ ] Run the following commands in two terminal sessions to start the Producer and Consumer in the Docker container itself.
 

@@ -1,7 +1,7 @@
 # real-time-anomaly-detection
 This is an attempt to learn Kafka by building a real-time anomaly detection system using the IsolationForest algorithm.
 
-## Setup
+## Sample Usage
 Run the following commands in two terminal sessions to start the Producer and Consumer in your local machine.
 
 - To Run the Producer:

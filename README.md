@@ -2,7 +2,7 @@
 This is an attempt to learn Kafka by building a real-time anomaly detection system using the IsolationForest algorithm.
 
 ## Sample Usage
-Run the following commands in two terminal sessions to start the Producer and Consumer in your local machine.
+[] Run the following commands in two terminal sessions to start the Producer and Consumer in your local machine.
 
 - To Run the Producer:
 
@@ -17,7 +17,7 @@ kafka-console-consumer --topic topic1 --from-beginning --bootstrap-server localh
 ```
 
 
-Run the following commands in two terminal sessions to start the Producer and Consumer in the Docker container itself.
+[] Run the following commands in two terminal sessions to start the Producer and Consumer in the Docker container itself.
 
 - To Run the Producer:
 

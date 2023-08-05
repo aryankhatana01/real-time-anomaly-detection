@@ -1,4 +1,5 @@
 from confluent_kafka.admin import AdminClient, NewTopic
+from admin_client import wait_for_admin_client
 import config
 import logging
 import time
@@ -9,15 +10,6 @@ logging.basicConfig(
     level=logging.INFO, 
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
-
-
-def wait_for_admin_client(admin_client):
-    # Wait until the admin client is connected to the Kafka cluster
-    while True:
-        metadata = admin_client.list_topics(timeout=5)
-        if metadata is not None:
-            break
-        admin_client.poll(0.1)
 
 
 def create_kafka_topic(broker_name, topic_names, num_partitions=1, replication_factor=1):

@@ -3,3 +3,4 @@ confluent-kafka
 numpy
 joblib
 argparse
+colorlog

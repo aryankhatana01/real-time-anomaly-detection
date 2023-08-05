@@ -1,15 +1,16 @@
 from confluent_kafka.admin import AdminClient, NewTopic
 from admin_client import wait_for_admin_client
 import config
-import logging
 import time
+from _logging import get_logger
 
 
 # Logging configuration
-logging.basicConfig(
-    level=logging.INFO, 
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
+# logging.basicConfig(
+#     level=logging.INFO, 
+#     format='%(asctime)s - %(levelname)s - %(message)s'
+# )
+logger = get_logger()
 
 
 def create_kafka_topic(broker_name, topic_names, num_partitions=1, replication_factor=1):
@@ -20,7 +21,7 @@ def create_kafka_topic(broker_name, topic_names, num_partitions=1, replication_f
 
     # time.sleep(15) # Wait for Kafka to connect
     wait_for_admin_client(admin_client)
-    logging.info("Admin client connected to Kafka cluster")
+    logger.info("Admin client connected to Kafka cluster")
 
     # Create a list of NewTopic object with topic configuration
     topics_list = []
@@ -44,4 +45,4 @@ if __name__ == "__main__":
     create_kafka_topic(broker_name, topic_names, num_partitions, replication_factor)
 
     # print("Kafka topic created successfully")
-    logging.info("Kafka topics created successfully")
+    logger.info("Kafka topics created successfully")

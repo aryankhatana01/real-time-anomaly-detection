@@ -1,13 +1,14 @@
 from confluent_kafka.admin import AdminClient
 import config
-import logging
 from admin_client import wait_for_admin_client
 import argparse
+from _logging import get_logger
 
-logging.basicConfig(
-    level=logging.INFO, 
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
+# logging.basicConfig(
+#     level=logging.INFO, 
+#     format='%(asctime)s - %(levelname)s - %(message)s'
+# )
+logger = get_logger()
 
 
 def delete_kafka_topics(broker_name, topics):
@@ -22,9 +23,9 @@ def delete_kafka_topics(broker_name, topics):
     for topic, f in fs.items():
         try:
             f.result()  # The result itself is None
-            logging.info("Topic {} deleted".format(topic))
+            logger.info("Topic {} deleted".format(topic))
         except Exception as e:
-            logging.info("Failed to delete topic {}: {}".format(topic, e))
+            logger.info("Failed to delete topic {}: {}".format(topic, e))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Delete Kafka topics")
